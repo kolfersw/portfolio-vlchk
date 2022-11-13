@@ -18,7 +18,7 @@ a {
 }
 
 a:hover {
-    color: rgb(255, 113, 220);
+    color: #FF71DC;
 }
 
 .grid-big {
@@ -31,9 +31,9 @@ a:hover {
 .grid-small {
     position: fixed;
     display: grid;
-    grid-template-columns: repeat(3, auto);
+    grid-template-columns: repeat(3, 150px);
     grid-template-rows: repeat(4, auto);
-    grid-gap: 15px 30px;
+    grid-gap: 10px 30px;
 }
 
 .main-text {
@@ -59,4 +59,86 @@ a:hover {
     bottom: 0;
     left: 0;
     padding: 20px;
+}
+
+
+@media (max-width: 1400px) {
+    .main-text {
+        font-size: 80px;
+        line-height: 80px;
+    }
+    body {
+        font-size: 12px;
+        line-height: 14px;
+    }
+    .grid-small {
+        grid-template-columns: repeat(3,100px);
+    }
+}
+
+@media (max-width: 1100px) {
+    .grid-big {
+        display: flex;
+        flex-direction: column;
+    }
+    .grid-small {
+        position: relative;
+        grid-template-columns: repeat(4,auto);
+        grid-gap: 10px 20px;
+    }
+    .main-text {
+        font-size: 55px;
+        line-height: 55px;
+        margin-top: 20px;
+    }
+    .hard {
+        font-weight: 800;
+    }
+    .double {
+        grid-column: span 1;
+    }
+    .footer {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2px 8px;
+        position: fixed;
+        padding: 20px;
+        margin-top: 20px; 
+    }
+}
+
+@media (max-width: 670px) {
+    .footer {
+        position: relative;
+        padding: 0px;
+    }
+}
+
+@media (max-width: 570px) {
+    .main-text {
+        font-size: 50px;
+        line-height: 50px;
+    }
+}
+
+@media (max-width: 420px) {
+    .grid-small {
+        grid-template-columns: repeat(2,auto);
+    }
+    .main-text {
+        font-size: 30px;
+        line-height: 30px;
+        margin-top: 50px;
+    }
+    .footer {
+        position: fixed;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 300px) {
+    .footer {
+        position: relative;
+        padding: 0px;
+    }
 }
